@@ -71,8 +71,8 @@ module Poloniex
     post('buy', { currencyPair: currency_pair, rate: rate, amount: amount }.merge(extra))
   end
 
-  def self.sell( currency_pair, rate, amount )
-    post 'sell', currencyPair: currency_pair, rate: rate, amount: amount
+  def self.sell( currency_pair, rate, amount, *extra )
+    post('sell', { currencyPair: currency_pair, rate: rate, amount: amount }.merge(extra))
   end
 
   def self.cancel_order( currency_pair, order_number )
